@@ -66,21 +66,19 @@ const simon = {
 	// Highlight the correct sequence in turn
 	highlightSequence: function highlightSequence() {
 		for (let i = 0; i < this.currentSequence.length; i++) {
-			let next = document.querySelectorAll('[data-value="' + this.currentSequence[i] + '"]')[0];
+			let btn = document.querySelectorAll('[data-value="' + this.currentSequence[i] + '"]')[0];
 
-			this.highlightButton(next);
-			window.setTimeout(this.unHighlightButton(next), 1000);
+			this.highlightButton(btn);
+			window.setTimeout(() => this.unHighlightButton(btn), 700);
 		}
 	},
 
-	highlightButton: function highlightButton(el) {
-		console.log(el);
-		el.classList.add('highlight');
+	highlightButton: function highlightButton(btn) {
+		btn.classList.add('highlight');
 	},
 
-	unHighlightButton: function unHighlightButton(el) {
-		console.log(el);
-		el.classList.remove('highlight');
+	unHighlightButton: function unHighlightButton(btn) {
+		btn.classList.remove('highlight');
 	},
 
 	// Go to the next level

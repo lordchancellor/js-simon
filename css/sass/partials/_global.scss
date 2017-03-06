@@ -1,0 +1,16 @@
+// Buttons
+.btn-github {
+    background: $github;
+    border-color: $githubBorder;
+    color: $whiteText;
+
+    &:hover {
+        background: $githubShade;
+        color: $whiteText;
+    }
+}
+
+// Button glow
+.highlight {
+    box-shadow: 0px 0px 15px red;
+}

@@ -1,0 +1,15 @@
+/***************************************
+** Primary Stylesheet for Sandbox 3.0 **
+***************************************/
+.btn-github {
+  background: #333333;
+  border-color: #111111;
+  color: #ffffff; }
+  .btn-github:hover {
+    background: #222222;
+    color: #ffffff; }
+
+.highlight {
+  box-shadow: 0px 0px 15px red; }
+
+/*# sourceMappingURL=style.css.map */

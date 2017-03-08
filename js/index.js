@@ -8,7 +8,13 @@ const simon = {
 		this.moves = num;
 		this.generateSequence(num);
 		this.logSequence();
+		//this.highlightSequence();
 		this.highlightSequence();
+	},
+
+	// Get the sequence
+	getSequence: function getSequence() {
+		return this.currentSequence;
 	},
 
 	// Add a value to the current sequence
@@ -63,22 +69,18 @@ const simon = {
 		this.position = 0;
 	},
 
-	// Highlight the correct sequence in turn
-	highlightSequence: function highlightSequence() {
-		for (let i = 0; i < this.currentSequence.length; i++) {
-			let btn = document.querySelectorAll('[data-value="' + this.currentSequence[i] + '"]')[0];
+	// Highlights the current sequence in turn
+	highlightSequence: function highlightSequence(i = 0) {
+		if (i < simon.getSequence().length) {
+			let btn = document.querySelectorAll('[data-value="' + simon.getSequence()[i] + '"]')[0];
+			btn.classList.add('highlight');
 
-			this.highlightButton(btn);
-			window.setTimeout(() => this.unHighlightButton(btn), 700);
+			setTimeout(() => {
+				btn.classList.remove('highlight');
+
+				setTimeout(() => highlightSequence(i + 1), 200);
+			}, 700);
 		}
-	},
-
-	highlightButton: function highlightButton(btn) {
-		btn.classList.add('highlight');
-	},
-
-	unHighlightButton: function unHighlightButton(btn) {
-		btn.classList.remove('highlight');
 	},
 
 	// Go to the next level

@@ -1,4 +1,11 @@
 const setup = {
+	go: function go() {
+		this.setDate();
+		this.setListeners();
+		this.setupSimon();
+		this.setupUI();
+	},
+
 	setListeners: function setListeners() {
 		const green = document.getElementById('green');
 		const red = document.getElementById('red');
@@ -37,6 +44,10 @@ const setup = {
 		const count = simon.getCount();
 
 		document.getElementsByClassName('counter')[0].textContent = count < 10 ? '0' + count : count;
+	},
+
+	setDate: function setDate() {
+		document.getElementsByClassName('currentYear')[0].textContent = new Date().getFullYear();
 	}
 };
 
@@ -46,7 +57,7 @@ const simon = {
 	sequence: [],
 
 	// Just for production purposes
-	go: function go(num) {
+	go: function go(num = 0) {
 		// Production purposes
 		if (num) {
 			this.count = num;
@@ -55,7 +66,7 @@ const simon = {
 			this.highlightSequence();
 		}
 		else {
-			
+			console.log('Not yet');
 		}
 	},
 
@@ -174,7 +185,5 @@ const getColor = function getColor(num) {
 
 //Set up the game
 (() => {
-	setup.setListeners();
-	setup.setupSimon();
-	setup.setupUI();
+	setup.go();
 })();	

@@ -1,6 +1,7 @@
-/***************************************
-** Primary Stylesheet for Sandbox 3.0 **
-***************************************/
+html,
+body {
+  font-size: 16px; }
+
 .btn-github {
   background: #333333;
   border-color: #111111;
@@ -11,5 +12,30 @@
 
 .highlight {
   box-shadow: 0px 0px 15px red; }
+
+.controls {
+  border: 1px solid blue;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center; }
+  .controls .count-container,
+  .controls .start-btn-container,
+  .controls .strict-toggle-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+  .controls .count-container .counter {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background: #333;
+    color: red;
+    font-size: 1.0rem;
+    border: 1px solid #999;
+    border-radius: 4px;
+    width: 30px;
+    height: 45px; }
 
 /*# sourceMappingURL=style.css.map */

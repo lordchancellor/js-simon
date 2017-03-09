@@ -1,3 +1,8 @@
+html,
+body {
+    font-size: 16px;
+}
+
 // Buttons
 .btn-github {
     background: $github;
@@ -10,7 +15,7 @@
     }
 }
 
-// Button glow
+// Button highlight
 .highlight {
     box-shadow: 0px 0px 15px red;
 }

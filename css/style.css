@@ -36,7 +36,8 @@ body > .flex-container {
 .notifications {
   background: rgba(255, 255, 255, 0.5);
   margin-top: 50px;
-  text-align: center; }
+  text-align: center;
+  display: none; }
   .notifications h2 {
     font-family: 'Alfa Slab One', sans-serif;
     margin: 0;
@@ -64,6 +65,14 @@ body > .flex-container {
     width: 50%;
     max-width: 250px;
     min-width: 150px; }
+    #simon .simon-green:hover, #simon .simon-green:focus,
+    #simon .simon-red:hover,
+    #simon .simon-red:focus,
+    #simon .simon-yellow:hover,
+    #simon .simon-yellow:focus,
+    #simon .simon-blue:hover,
+    #simon .simon-blue:focus {
+      cursor: pointer; }
   #simon .simon-green {
     background: #49d759;
     border-top-left-radius: 100%;
@@ -133,5 +142,7 @@ body > .flex-container {
         height: 30px;
         background: red;
         box-shadow: 0px 0px 5px black; }
+        #simon .central-bar .controls .start-btn-container #start-game:hover {
+          cursor: pointer; }
 
 /*# sourceMappingURL=style.css.map */

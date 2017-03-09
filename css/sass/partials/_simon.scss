@@ -25,6 +25,11 @@
 		width: 50%;
 		max-width: 250px;
 		min-width: 150px;
+
+		&:hover,
+		&:focus {
+			cursor: pointer;
+		}
 	}
 	
 	.simon-green {
@@ -130,6 +135,10 @@
 					height: 30px;
 					background: red;
 					box-shadow: 0px 0px 5px black;
+
+					&:hover {
+						cursor: pointer;
+					}
 				}
 			}
 		}

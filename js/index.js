@@ -1,3 +1,4 @@
+// Setup API to control the initial page functions
 const setup = {
 	go: function go() {
 		this.setDate();
@@ -29,11 +30,7 @@ const setup = {
 
 	setupUI: function setupUI() {
 		// Setup the count
-		this.setupCount(simon.getCount());
-	},
-
-	setupCount: function setupCount(count) {
-		document.getElementsByClassName('counter')[0].textContent = count < 10 ? '0' + count : count;
+		ui.updateCount(simon.getCount());
 	},
 
 	setDate: function setDate() {
@@ -41,6 +38,30 @@ const setup = {
 	}
 };
 
+// UI API to control changes to the UI
+const ui = {
+	updateCount: function updateCount(count) {
+		document.getElementsByClassName('counter')[0].textContent = count < 10 ? '0' + count : count;
+	},
+
+	notify: function notify(msg) {
+		const msgBar = document.getElementsByClassName('notifications')[0];
+		const h2 = document.createElement('h2');
+		
+		h2.textContent = msg;
+
+		while (msgBar.children.length) {
+			msgBar.removeChild(msgBar.children[0]);
+		}
+
+		msgBar.appendChild(h2);
+		
+		msgBar.style.display = "block";
+		setTimeout(() => msgBar.style.display = "none", 2000);
+	}
+};
+
+// Simon API to control the game
 const simon = {
 	count: 1,
 	position: 0,
@@ -113,18 +134,20 @@ const simon = {
 	// Check the user's button click against the sequence
 	checkInput: function checkInput(num) {
 		if (this.sequence[this.position] === num) {
-			console.log('Correct');
-			
 			if (this.position < this.count-1) {
 				this.position++;
 			}
 			else {
-				console.log('You win!');
-				setTimeout(() => this.nextLevel(), 500);
+				ui.notify('Correct!');
+
+				setTimeout(() => {
+					ui.notify('Next level coming up...');
+					setTimeout(() => this.nextLevel(), 2500);
+				}, 2000);
 			}
 		}
 		else {
-			console.log('Incorrect');
+			ui.notify('Incorrect');
 
 			if (!this.isStrict && this.retry) {
 				this.retry = false;
@@ -142,7 +165,7 @@ const simon = {
 		this.count = 1;
 		this.position = 0;
 		this.retry = true;
-		setup.setupCount(this.count);
+		ui.updateCount(this.count);
 	},
 
 	// Highlights the current sequence in turn
@@ -164,7 +187,7 @@ const simon = {
 		this.count++;
 		this.position = 0;
 		this.sequence = [];
-		setup.setupCount(this.count);
+		ui.updateCount(this.count);
 		
 		if (!this.isStrict) {
 			this.retry = true;

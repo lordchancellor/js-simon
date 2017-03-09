@@ -9,13 +9,10 @@ body {
 .btn-github {
   background: #333333;
   border-color: #111111;
-  color: #ffffff; }
+  color: #eee; }
   .btn-github:hover {
     background: #222222;
-    color: #ffffff; }
-
-.highlight {
-  box-shadow: 0px 0px 15px red; }
+    color: #eee; }
 
 header {
   display: flex;
@@ -36,6 +33,16 @@ body > .flex-container {
   justify-content: center;
   align-items: center; }
 
+.notifications {
+  background: rgba(255, 255, 255, 0.5);
+  margin-top: 50px;
+  text-align: center; }
+  .notifications h2 {
+    font-family: 'Alfa Slab One', sans-serif;
+    margin: 0;
+    padding-bottom: 20px;
+    padding-top: 20px; }
+
 #simon {
   margin-top: 50px;
   width: 40%;
@@ -50,7 +57,7 @@ body > .flex-container {
   #simon .simon-red,
   #simon .simon-yellow,
   #simon .simon-blue {
-    border: solid black;
+    border: solid #222;
     height: 187px;
     max-height: 250px;
     min-height: 150px;
@@ -62,55 +69,69 @@ body > .flex-container {
     border-top-left-radius: 100%;
     border-right-width: 5px;
     border-width: 10px 5px 5px 10px; }
-    #simon .simon-green:hover, #simon .simon-green:focus {
+    #simon .simon-green:hover, #simon .simon-green:focus, #simon .simon-green.highlight {
       background: #73e07f; }
   #simon .simon-red {
     background: #f6321a;
     border-top-right-radius: 100%;
     border-width: 10px 10px 5px 5px; }
-    #simon .simon-red:hover, #simon .simon-red:focus {
+    #simon .simon-red:hover, #simon .simon-red:focus, #simon .simon-red.highlight {
       background: #f85e4b; }
   #simon .simon-yellow {
     background: #fff732;
     border-bottom-left-radius: 100%;
     border-width: 5px 5px 10px 10px; }
-    #simon .simon-yellow:hover, #simon .simon-yellow:focus {
+    #simon .simon-yellow:hover, #simon .simon-yellow:focus, #simon .simon-yellow.highlight {
       background: #fff965; }
   #simon .simon-blue {
     background: #019be9;
     border-bottom-right-radius: 100%;
     border-width: 5px 10px 10px 5px; }
-    #simon .simon-blue:hover, #simon .simon-blue:focus {
+    #simon .simon-blue:hover, #simon .simon-blue:focus, #simon .simon-blue.highlight {
       background: #1fb3fe; }
-  #simon .controls {
-    border: 1px solid blue;
+  #simon .central-bar {
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    flex-direction: column;
     align-items: center; }
-    #simon .controls .count-container,
-    #simon .controls .start-btn-container,
-    #simon .controls .strict-toggle-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center; }
-    #simon .controls .count-container .counter {
+    #simon .central-bar h3 {
+      font-family: 'Alfa Slab One', sans-serif;
+      padding-bottom: 5px;
+      padding-top: 5px;
+      margin: 0;
+      width: 75%;
+      text-align: center;
+      background: #222;
+      color: #eee; }
+    #simon .central-bar .controls {
       display: flex;
       flex-direction: row;
-      justify-content: center;
+      justify-content: space-around;
       align-items: center;
-      background: #333;
-      color: red;
-      font-size: 1.0rem;
-      border: 1px solid #999;
-      border-radius: 4px;
-      width: 30px;
-      height: 45px; }
-    #simon .controls .start-btn-container #start-game {
-      border-radius: 50%;
-      width: 30px;
-      height: 30px;
-      background: red;
-      box-shadow: 0px 0px 5px black; }
+      width: 75%;
+      background: #222; }
+      #simon .central-bar .controls .count-container,
+      #simon .central-bar .controls .start-btn-container,
+      #simon .central-bar .controls .strict-toggle-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center; }
+      #simon .central-bar .controls .count-container .counter {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        background: #333;
+        color: red;
+        font-size: 1.0rem;
+        border: 1px solid #999;
+        border-radius: 4px;
+        width: 30px;
+        height: 45px; }
+      #simon .central-bar .controls .start-btn-container #start-game {
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        background: red;
+        box-shadow: 0px 0px 5px black; }
 
 /*# sourceMappingURL=style.css.map */

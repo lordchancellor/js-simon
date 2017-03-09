@@ -25,3 +25,15 @@ body > .flex-container {
 	justify-content: center;
 	align-items: center;
 }
+
+.notifications {
+    background: rgba(255, 255, 255, 0.5);
+    margin-top: 50px;
+    text-align: center;
+
+    h2 {
+        font-family: 'Alfa Slab One', sans-serif;
+        margin: 0;
+        @include paddingY(20px);
+    }
+}

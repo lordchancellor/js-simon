@@ -1,9 +1,9 @@
 const setup = {
 	go: function go() {
 		this.setDate();
-		this.setListeners();
 		this.setupSimon();
 		this.setupUI();
+		this.setListeners();
 	},
 
 	setListeners: function setListeners() {
@@ -11,26 +11,13 @@ const setup = {
 		const red = document.getElementById('red');
 		const yellow = document.getElementById('yellow');
 		const blue = document.getElementById('blue');
+		const startBtn = document.getElementById('start-game');
 
-		green.addEventListener('click', () => {
-			console.log('clicked green');
-			simon.checkInput(1);
-		});
-
-		red.addEventListener('click', () => {
-			console.log('clicked red');
-			simon.checkInput(2);
-		});
-
-		yellow.addEventListener('click', () => {
-			console.log('clicked yellow');
-			simon.checkInput(3);
-		});
-
-		blue.addEventListener('click', () => {
-			console.log('clicked blue');
-			simon.checkInput(4);
-		});
+		green.addEventListener('click', () => simon.checkInput(1));
+		red.addEventListener('click', () => simon.checkInput(2));
+		yellow.addEventListener('click', () => simon.checkInput(3));
+		blue.addEventListener('click', () => simon.checkInput(4));
+		startBtn.addEventListener('click', () => simon.go());
 	},
 	
 	// Setup the Simon object, allowing for custom setup if required
@@ -41,8 +28,11 @@ const setup = {
 	},
 
 	setupUI: function setupUI() {
-		const count = simon.getCount();
+		// Setup the count
+		this.setupCount(simon.getCount());
+	},
 
+	setupCount: function setupCount(count) {
 		document.getElementsByClassName('counter')[0].textContent = count < 10 ? '0' + count : count;
 	},
 
@@ -55,8 +45,9 @@ const simon = {
 	count: 1,
 	position: 0,
 	sequence: [],
+	isStrict: false,
+	retry: true,
 
-	// Just for production purposes
 	go: function go(num = 0) {
 		// Production purposes
 		if (num) {
@@ -66,7 +57,9 @@ const simon = {
 			this.highlightSequence();
 		}
 		else {
-			console.log('Not yet');
+			this.generateSequence(this.count);
+			this.logSequence();
+			this.highlightSequence();
 		}
 	},
 
@@ -127,16 +120,19 @@ const simon = {
 			}
 			else {
 				console.log('You win!');
-				this.reset();
-				console.log('Generating a new sequence');
-				this.go(4);
+				setTimeout(() => this.nextLevel(), 500);
 			}
 		}
 		else {
 			console.log('Incorrect');
-			this.reset();
-			console.log('Generating a new sequence');
-			this.go(4);
+
+			if (!this.isStrict && this.retry) {
+				this.retry = false;
+				this.highlightSequence();
+			}
+			else {
+				this.reset();
+			}
 		}
 	},
 
@@ -145,6 +141,8 @@ const simon = {
 		this.sequence = [];
 		this.count = 1;
 		this.position = 0;
+		this.retry = true;
+		setup.setupCount(this.count);
 	},
 
 	// Highlights the current sequence in turn
@@ -164,7 +162,15 @@ const simon = {
 	// Go to the next level
 	nextLevel: function nextLevel() {
 		this.count++;
+		this.position = 0;
 		this.sequence = [];
+		setup.setupCount(this.count);
+		
+		if (!this.isStrict) {
+			this.retry = true;
+		}
+
+		this.go(this.count);
 	}
 };
 

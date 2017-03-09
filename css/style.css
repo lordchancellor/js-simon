@@ -4,7 +4,7 @@ body {
   color: #333333; }
 
 body {
-  background: url("/img/background.jpg"); }
+  background: url("../img/background.jpg"); }
 
 .btn-github {
   background: #333333;
@@ -13,6 +13,9 @@ body {
   .btn-github:hover {
     background: #222222;
     color: #ffffff; }
+
+.highlight {
+  box-shadow: 0px 0px 15px red; }
 
 header {
   display: flex;
@@ -27,32 +30,46 @@ header {
     header h5 a:hover, header h5 a:focus {
       color: #333333; }
 
-.highlight {
-  box-shadow: 0px 0px 15px red; }
-
-.controls {
-  border: 1px solid blue;
+body > .flex-container {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center; }
-  .controls .count-container,
-  .controls .start-btn-container,
-  .controls .strict-toggle-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center; }
-  .controls .count-container .counter {
+
+#simon {
+  margin-top: 50px;
+  width: 40%;
+  max-width: 500px;
+  min-width: 300px; }
+  #simon .controls {
+    border: 1px solid blue;
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    background: #333;
-    color: red;
-    font-size: 1.0rem;
-    border: 1px solid #999;
-    border-radius: 4px;
-    width: 30px;
-    height: 45px; }
+    justify-content: space-around;
+    align-items: center; }
+    #simon .controls .count-container,
+    #simon .controls .start-btn-container,
+    #simon .controls .strict-toggle-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center; }
+    #simon .controls .count-container .counter {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      background: #333;
+      color: red;
+      font-size: 1.0rem;
+      border: 1px solid #999;
+      border-radius: 4px;
+      width: 30px;
+      height: 45px; }
+    #simon .controls .start-btn-container #start-game {
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      background: red;
+      box-shadow: 0px 0px 5px black; }
 
 /*# sourceMappingURL=style.css.map */

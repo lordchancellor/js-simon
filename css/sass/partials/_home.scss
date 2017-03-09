@@ -1,0 +1,27 @@
+// Header
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    @include paddingX(50px);
+    background: rgba(255, 255, 255, 0.5);
+
+    h5 {
+        a {
+            color: $darkText;
+
+            &:hover,
+            &:focus {
+                color: $darkText;
+            }
+        }
+    }
+}
+
+body > .flex-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}

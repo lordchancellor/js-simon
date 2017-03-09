@@ -5,6 +5,73 @@
 	max-width: 500px;
 	min-width: 300px;
 
+	// Buttons
+	.top-buttons,
+	.bottom-buttons {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+	}
+
+	.simon-green,
+	.simon-red,
+	.simon-yellow,
+	.simon-blue {
+		border: solid black;
+		height: 187px;
+		max-height: 250px;
+		min-height: 150px;
+
+		width: 50%;
+		max-width: 250px;
+		min-width: 150px;
+	}
+	
+	.simon-green {
+		background: $simonGreen;
+		border-top-left-radius: 100%;
+		border-right-width: 5px;
+		border-width: 10px 5px 5px 10px;
+
+		&:hover,
+		&:focus {
+			background: $simonGShade;
+		}
+	}
+
+	.simon-red {
+		background: $simonRed;
+		border-top-right-radius: 100%;
+		border-width: 10px 10px 5px 5px;
+
+		&:hover,
+		&:focus {
+			background: $simonRShade;
+		}
+	}
+
+	.simon-yellow {
+		background: $simonYellow;
+		border-bottom-left-radius: 100%;
+		border-width: 5px 5px 10px 10px;
+
+		&:hover,
+		&:focus {
+			background: $simonYShade;
+		}
+	}
+
+	.simon-blue {
+		background: $simonBlue;
+		border-bottom-right-radius: 100%;
+		border-width: 5px 10px 10px 5px;
+
+		&:hover,
+		&:focus {
+			background: $simonBShade;
+		}
+	}
+
 	.controls {
 		border: 1px solid blue;
 

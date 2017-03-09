@@ -5,3 +5,14 @@ $darkText:      #333333;
 $github:        #333333;
 $githubShade:   #222222;
 $githubBorder:  #111111;
+
+// Simon Button Colours
+$simonGreen:	#49d759;
+$simonRed:		#f6321a;
+$simonYellow: 	#fff732;
+$simonBlue: 	#019be9;
+
+$simonGShade:	lighten($simonGreen, 10%);
+$simonRShade:	lighten($simonRed, 10%);
+$simonYShade:	lighten($simonYellow, 10%);
+$simonBShade:	lighten($simonBlue, 10%);

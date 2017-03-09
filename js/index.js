@@ -1,30 +1,97 @@
+const setup = {
+	setListeners: function setListeners() {
+		const green = document.getElementById('green');
+		const red = document.getElementById('red');
+		const yellow = document.getElementById('yellow');
+		const blue = document.getElementById('blue');
+
+		green.addEventListener('click', () => {
+			console.log('clicked green');
+			simon.checkInput(1);
+		});
+
+		red.addEventListener('click', () => {
+			console.log('clicked red');
+			simon.checkInput(2);
+		});
+
+		yellow.addEventListener('click', () => {
+			console.log('clicked yellow');
+			simon.checkInput(3);
+		});
+
+		blue.addEventListener('click', () => {
+			console.log('clicked blue');
+			simon.checkInput(4);
+		});
+	},
+	
+	// Setup the Simon object, allowing for custom setup if required
+	setupSimon: function setupSimon(count = 1, pos = 0, seq = []) {
+		simon.setCount(count);
+		simon.setPosition(pos);
+		simon.setSequence(seq);
+	},
+
+	setupUI: function setupUI() {
+		const count = simon.getCount();
+
+		document.getElementsByClassName('counter')[0].textContent = count < 10 ? '0' + count : count;
+	}
+};
+
 const simon = {
-	moves: 1,
+	count: 1,
 	position: 0,
-	currentSequence: [],
+	sequence: [],
 
 	// Just for production purposes
-	go: function(num) {
-		this.moves = num;
-		this.generateSequence(num);
-		this.logSequence();
-		//this.highlightSequence();
-		this.highlightSequence();
+	go: function go(num) {
+		// Production purposes
+		if (num) {
+			this.count = num;
+			this.generateSequence(num);
+			this.logSequence();
+			this.highlightSequence();
+		}
+		else {
+			
+		}
+	},
+
+	getCount: function getCount() {
+		return this.count;
+	},
+
+	setCount: function setCount(num) {
+		this.count = num;
+	},
+
+	getPosition: function getPosition() {
+		return this.position;
+	},
+
+	setPosition: function setPosition(pos) {
+		this.position = pos;
 	},
 
 	// Get the sequence
 	getSequence: function getSequence() {
-		return this.currentSequence;
+		return this.sequence;
+	},
+
+	setSequence: function setSequence(arr) {
+		this.sequence = arr;
 	},
 
 	// Add a value to the current sequence
-	addToCurrentSequence: function addToSequence(num) {
-		this.currentSequence = [...this.currentSequence, num];
+	addToSequence: function addToSequence(num) {
+		this.sequence = [...this.sequence, num];
 	},
 
 	// Possibly just for production purposes - print out the colour sequence
 	logSequence: function logSequence() {
-		for (let i of this.currentSequence) {
+		for (let i of this.sequence) {
 			console.log(getColor(i));
 		}
 	},
@@ -32,7 +99,7 @@ const simon = {
 	// Generate a new sequence
 	generateSequence: function generateSequence(moves) {
 		do {
-			this.addToCurrentSequence(Math.floor(Math.random() * 4) + 1);
+			this.addToSequence(Math.floor(Math.random() * 4) + 1);
 
 			moves--;
 		}
@@ -41,10 +108,10 @@ const simon = {
 
 	// Check the user's button click against the sequence
 	checkInput: function checkInput(num) {
-		if (this.currentSequence[this.position] === num) {
+		if (this.sequence[this.position] === num) {
 			console.log('Correct');
 			
-			if (this.position < this.moves-1) {
+			if (this.position < this.count-1) {
 				this.position++;
 			}
 			else {
@@ -64,8 +131,8 @@ const simon = {
 
 	// Reset the game
 	reset: function reset() {
-		this.currentSequence = [];
-		this.moves = 1;
+		this.sequence = [];
+		this.count = 1;
 		this.position = 0;
 	},
 
@@ -85,9 +152,8 @@ const simon = {
 
 	// Go to the next level
 	nextLevel: function nextLevel() {
-		this.moves++;
-		this.currentSequence = [];
-		//this.go(this.moves);
+		this.count++;
+		this.sequence = [];
 	}
 };
 
@@ -108,28 +174,7 @@ const getColor = function getColor(num) {
 
 //Set up the game
 (() => {
-	const green = document.getElementById('green');
-	const red = document.getElementById('red');
-	const yellow = document.getElementById('yellow');
-	const blue = document.getElementById('blue');
-
-	green.addEventListener('click', () => {
-		console.log('clicked green');
-		simon.checkInput(1);
-	});
-
-	red.addEventListener('click', () => {
-		console.log('clicked red');
-		simon.checkInput(2);
-	});
-
-	yellow.addEventListener('click', () => {
-		console.log('clicked yellow');
-		simon.checkInput(3);
-	});
-
-	blue.addEventListener('click', () => {
-		console.log('clicked blue');
-		simon.checkInput(4);
-	});
+	setup.setListeners();
+	setup.setupSimon();
+	setup.setupUI();
 })();	

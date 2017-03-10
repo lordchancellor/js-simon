@@ -124,6 +124,10 @@ body > .flex-container {
         display: flex;
         flex-direction: column;
         align-items: center; }
+        #simon .central-bar .controls .count-container span,
+        #simon .central-bar .controls .start-btn-container span,
+        #simon .central-bar .controls .strict-toggle-container span {
+          color: #eee; }
       #simon .central-bar .controls .count-container .counter {
         display: flex;
         flex-direction: row;
@@ -141,8 +145,31 @@ body > .flex-container {
         width: 30px;
         height: 30px;
         background: red;
-        box-shadow: 0px 0px 5px black; }
+        box-shadow: 0px 0px 5px white; }
         #simon .central-bar .controls .start-btn-container #start-game:hover {
           cursor: pointer; }
+      #simon .central-bar .controls .strict-toggle-container .strict-flex {
+        display: flex;
+        flex-direction: row;
+        align-items: center; }
+        #simon .central-bar .controls .strict-toggle-container .strict-flex input[type=checkbox] {
+          position: absolute;
+          top: -9999px;
+          left: -9999px; }
+        #simon .central-bar .controls .strict-toggle-container .strict-flex label {
+          width: 30px;
+          height: 30px;
+          border-radius: 50%;
+          background: yellow;
+          box-shadow: 0px 0px 5px white;
+          margin-right: 2px; }
+        #simon .central-bar .controls .strict-toggle-container .strict-flex .indicator {
+          width: 5px;
+          height: 5px;
+          border-radius: 50%;
+          background: black;
+          margin-left: 2px; }
+        #simon .central-bar .controls .strict-toggle-container .strict-flex input[type=checkbox]:checked + label + .indicator {
+          background: red; }
 
 /*# sourceMappingURL=style.css.map */

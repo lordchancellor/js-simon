@@ -110,6 +110,10 @@
 				display: flex;
 				flex-direction: column;
 				align-items: center;
+
+				span {
+					color: $whiteText;
+				}
 			}
 
 			.count-container {
@@ -134,10 +138,45 @@
 					width: 30px;
 					height: 30px;
 					background: red;
-					box-shadow: 0px 0px 5px black;
+					box-shadow: 0px 0px 5px white;
 
 					&:hover {
 						cursor: pointer;
+					}
+				}
+			}
+
+			.strict-toggle-container {
+				.strict-flex {
+					display: flex;
+					flex-direction: row;
+					align-items: center;
+					
+					input[type=checkbox] {
+						position: absolute;
+						top: -9999px;
+						left: -9999px;
+					}
+
+					label {
+						width: 30px;
+						height: 30px;
+						border-radius: 50%;
+						background: yellow;
+						box-shadow: 0px 0px 5px white;
+						margin-right: 2px;
+					}
+
+					.indicator {
+						width: 5px;
+						height: 5px;
+						border-radius: 50%;
+						background: black;
+						margin-left: 2px;
+					}
+
+					input[type=checkbox]:checked + label + .indicator {
+						background: red;
 					}
 				}
 			}

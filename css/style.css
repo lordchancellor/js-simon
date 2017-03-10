@@ -46,9 +46,13 @@ body > .flex-container {
 
 #simon {
   margin-top: 50px;
-  width: 40%;
-  max-width: 500px;
-  min-width: 300px; }
+  width: 300px; }
+  @media screen and (min-width: 500px) {
+    #simon {
+      width: 450px; } }
+  @media screen and (min-width: 768px) {
+    #simon {
+      width: 600px; } }
   #simon .top-buttons,
   #simon .bottom-buttons {
     display: flex;
@@ -59,12 +63,22 @@ body > .flex-container {
   #simon .simon-yellow,
   #simon .simon-blue {
     border: solid #222;
-    height: 187px;
-    max-height: 250px;
-    min-height: 150px;
-    width: 50%;
-    max-width: 250px;
-    min-width: 150px; }
+    width: 150px;
+    height: 150px; }
+    @media screen and (min-width: 500px) {
+      #simon .simon-green,
+      #simon .simon-red,
+      #simon .simon-yellow,
+      #simon .simon-blue {
+        width: 225px;
+        height: 225px; } }
+    @media screen and (min-width: 768px) {
+      #simon .simon-green,
+      #simon .simon-red,
+      #simon .simon-yellow,
+      #simon .simon-blue {
+        width: 300px;
+        height: 300px; } }
     #simon .simon-green:hover, #simon .simon-green:focus,
     #simon .simon-red:hover,
     #simon .simon-red:focus,

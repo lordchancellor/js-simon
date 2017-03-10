@@ -1,4 +1,7 @@
 #simon {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 	margin-top: 50px;
 	width: 300px;
 	
@@ -92,18 +95,47 @@
 	}
 
 	.central-bar {
+		width: 100px;
+		position: absolute;
+		background: $simonBorder;
+		top: 205px;
+		width: 175px;
+		height: 175px;
+		border-radius: 100%;
 		display: flex;
-		flex-direction: column;
 		align-items: center;
+		flex-direction: column;
+		justify-content: center;
+
+		@media screen and (min-width: 500px) {
+			top: 245px;
+			width: 250px;
+			height: 250px;
+		}
+
+		@media screen and (min-width: 768px) {
+			top: 294px;
+			width: 300px;
+			height: 300px;
+		}
 
 		h3 {
 			font-family: 'Alfa Slab One', sans-serif;
 			@include paddingY(5px);
 			margin: 0;
-			width: 75%;
+			width: 100%;
 			text-align: center;
-			background: $simonBorder;
+			//background: $simonBorder;
 			color: $whiteText;
+			font-size: 1.0rem;
+
+			@media screen and (min-width: 450px) {
+				font-size: 1.25rem;
+			}
+
+			@media screen and (min-width: 768px) {
+				font-size: 1.5rem;
+			}
 		}
 
 		.controls {
@@ -111,8 +143,8 @@
 			flex-direction: row;
 			justify-content: space-around;
 			align-items: center;
-			width: 75%;
-			background: $simonBorder;
+			width: 100%;
+			//background: $simonBorder;
 
 			.count-container,
 			.start-btn-container,

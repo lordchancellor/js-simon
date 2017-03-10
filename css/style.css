@@ -45,6 +45,9 @@ body > .flex-container {
     padding-top: 20px; }
 
 #simon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin-top: 50px;
   width: 300px; }
   @media screen and (min-width: 500px) {
@@ -113,25 +116,48 @@ body > .flex-container {
     #simon .simon-blue:hover, #simon .simon-blue:focus, #simon .simon-blue.highlight {
       background: #1fb3fe; }
   #simon .central-bar {
+    width: 100px;
+    position: absolute;
+    background: #222;
+    top: 205px;
+    width: 175px;
+    height: 175px;
+    border-radius: 100%;
     display: flex;
+    align-items: center;
     flex-direction: column;
-    align-items: center; }
+    justify-content: center; }
+    @media screen and (min-width: 500px) {
+      #simon .central-bar {
+        top: 245px;
+        width: 250px;
+        height: 250px; } }
+    @media screen and (min-width: 768px) {
+      #simon .central-bar {
+        top: 294px;
+        width: 300px;
+        height: 300px; } }
     #simon .central-bar h3 {
       font-family: 'Alfa Slab One', sans-serif;
       padding-bottom: 5px;
       padding-top: 5px;
       margin: 0;
-      width: 75%;
+      width: 100%;
       text-align: center;
-      background: #222;
-      color: #eee; }
+      color: #eee;
+      font-size: 1.0rem; }
+      @media screen and (min-width: 450px) {
+        #simon .central-bar h3 {
+          font-size: 1.25rem; } }
+      @media screen and (min-width: 768px) {
+        #simon .central-bar h3 {
+          font-size: 1.5rem; } }
     #simon .central-bar .controls {
       display: flex;
       flex-direction: row;
       justify-content: space-around;
       align-items: center;
-      width: 75%;
-      background: #222; }
+      width: 100%; }
       #simon .central-bar .controls .count-container,
       #simon .central-bar .controls .start-btn-container,
       #simon .central-bar .controls .strict-toggle-container {

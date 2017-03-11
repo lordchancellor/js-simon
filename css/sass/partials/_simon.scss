@@ -51,7 +51,6 @@
 		border-right-width: 5px;
 		border-width: 10px 5px 5px 10px;
 
-		&:hover,
 		&:focus,
 		&.highlight {
 			background: $simonGShade;
@@ -63,7 +62,6 @@
 		border-top-right-radius: 100%;
 		border-width: 10px 10px 5px 5px;
 
-		&:hover,
 		&:focus,
 		&.highlight {
 			background: $simonRShade;
@@ -75,7 +73,6 @@
 		border-bottom-left-radius: 100%;
 		border-width: 5px 5px 10px 10px;
 
-		&:hover,
 		&:focus,
 		&.highlight {
 			background: $simonYShade;
@@ -87,7 +84,6 @@
 		border-bottom-right-radius: 100%;
 		border-width: 5px 10px 10px 5px;
 
-		&:hover,
 		&:focus,
 		&.highlight {
 			background: $simonBShade;
@@ -175,15 +171,19 @@
 			}
 
 			.start-btn-container {
-				#start-game {
+				.start-game {
 					border-radius: 50%;
 					width: 30px;
 					height: 30px;
 					background: red;
-					box-shadow: 0px 0px 5px white;
 
 					&:hover {
 						cursor: pointer;
+					}
+
+					&[disabled] {
+						background: rgba(red, 0.8);
+						cursor: default;
 					}
 				}
 			}

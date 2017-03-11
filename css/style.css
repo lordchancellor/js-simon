@@ -95,25 +95,25 @@ body > .flex-container {
     border-top-left-radius: 100%;
     border-right-width: 5px;
     border-width: 10px 5px 5px 10px; }
-    #simon .simon-green:hover, #simon .simon-green:focus, #simon .simon-green.highlight {
+    #simon .simon-green:focus, #simon .simon-green.highlight {
       background: #73e07f; }
   #simon .simon-red {
     background: #f6321a;
     border-top-right-radius: 100%;
     border-width: 10px 10px 5px 5px; }
-    #simon .simon-red:hover, #simon .simon-red:focus, #simon .simon-red.highlight {
+    #simon .simon-red:focus, #simon .simon-red.highlight {
       background: #f85e4b; }
   #simon .simon-yellow {
     background: #fff732;
     border-bottom-left-radius: 100%;
     border-width: 5px 5px 10px 10px; }
-    #simon .simon-yellow:hover, #simon .simon-yellow:focus, #simon .simon-yellow.highlight {
+    #simon .simon-yellow:focus, #simon .simon-yellow.highlight {
       background: #fff965; }
   #simon .simon-blue {
     background: #019be9;
     border-bottom-right-radius: 100%;
     border-width: 5px 10px 10px 5px; }
-    #simon .simon-blue:hover, #simon .simon-blue:focus, #simon .simon-blue.highlight {
+    #simon .simon-blue:focus, #simon .simon-blue.highlight {
       background: #1fb3fe; }
   #simon .central-bar {
     width: 100px;
@@ -180,14 +180,16 @@ body > .flex-container {
         border-radius: 4px;
         width: 30px;
         height: 45px; }
-      #simon .central-bar .controls .start-btn-container #start-game {
+      #simon .central-bar .controls .start-btn-container .start-game {
         border-radius: 50%;
         width: 30px;
         height: 30px;
-        background: red;
-        box-shadow: 0px 0px 5px white; }
-        #simon .central-bar .controls .start-btn-container #start-game:hover {
+        background: red; }
+        #simon .central-bar .controls .start-btn-container .start-game:hover {
           cursor: pointer; }
+        #simon .central-bar .controls .start-btn-container .start-game[disabled] {
+          background: rgba(255, 0, 0, 0.8);
+          cursor: default; }
       #simon .central-bar .controls .strict-toggle-container .strict-flex {
         display: flex;
         flex-direction: row;

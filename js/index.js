@@ -58,6 +58,12 @@ const ui = {
 		
 		msgBar.style.display = "block";
 		setTimeout(() => msgBar.style.display = "none", 2000);
+	},
+
+	toggleStart: function toggleStart(active) {
+		const btn = document.getElementsByClassName('start-game')[0];
+
+		btn.disabled = active;
 	}
 };
 
@@ -78,6 +84,7 @@ const simon = {
 			this.highlightSequence();
 		}
 		else {
+			ui.toggleStart(true);
 			this.generateSequence(this.count);
 			this.logSequence();
 			this.highlightSequence();
@@ -166,6 +173,7 @@ const simon = {
 		this.position = 0;
 		this.retry = true;
 		ui.updateCount(this.count);
+		ui.toggleStart(false);
 	},
 
 	// Highlights the current sequence in turn

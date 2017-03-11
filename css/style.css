@@ -44,78 +44,78 @@ body > .flex-container {
     padding-bottom: 20px;
     padding-top: 20px; }
 
-#simon {
+.simon {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 50px;
   width: 300px; }
   @media screen and (min-width: 500px) {
-    #simon {
+    .simon {
       width: 450px; } }
   @media screen and (min-width: 768px) {
-    #simon {
+    .simon {
       width: 600px; } }
-  #simon .top-buttons,
-  #simon .bottom-buttons {
+  .simon .top-buttons,
+  .simon .bottom-buttons {
     display: flex;
     flex-direction: row;
     align-items: center; }
-  #simon .simon-green,
-  #simon .simon-red,
-  #simon .simon-yellow,
-  #simon .simon-blue {
+  .simon .simon-green,
+  .simon .simon-red,
+  .simon .simon-yellow,
+  .simon .simon-blue {
     border: solid #222;
     width: 150px;
     height: 150px; }
     @media screen and (min-width: 500px) {
-      #simon .simon-green,
-      #simon .simon-red,
-      #simon .simon-yellow,
-      #simon .simon-blue {
+      .simon .simon-green,
+      .simon .simon-red,
+      .simon .simon-yellow,
+      .simon .simon-blue {
         width: 225px;
         height: 225px; } }
     @media screen and (min-width: 768px) {
-      #simon .simon-green,
-      #simon .simon-red,
-      #simon .simon-yellow,
-      #simon .simon-blue {
+      .simon .simon-green,
+      .simon .simon-red,
+      .simon .simon-yellow,
+      .simon .simon-blue {
         width: 300px;
         height: 300px; } }
-    #simon .simon-green:hover, #simon .simon-green:focus,
-    #simon .simon-red:hover,
-    #simon .simon-red:focus,
-    #simon .simon-yellow:hover,
-    #simon .simon-yellow:focus,
-    #simon .simon-blue:hover,
-    #simon .simon-blue:focus {
+    .simon .simon-green:hover, .simon .simon-green:focus,
+    .simon .simon-red:hover,
+    .simon .simon-red:focus,
+    .simon .simon-yellow:hover,
+    .simon .simon-yellow:focus,
+    .simon .simon-blue:hover,
+    .simon .simon-blue:focus {
       cursor: pointer; }
-  #simon .simon-green {
+  .simon .simon-green {
     background: #49d759;
     border-top-left-radius: 100%;
     border-right-width: 5px;
     border-width: 10px 5px 5px 10px; }
-    #simon .simon-green:focus, #simon .simon-green.highlight {
+    .simon .simon-green:focus, .simon .simon-green.highlight {
       background: #73e07f; }
-  #simon .simon-red {
+  .simon .simon-red {
     background: #f6321a;
     border-top-right-radius: 100%;
     border-width: 10px 10px 5px 5px; }
-    #simon .simon-red:focus, #simon .simon-red.highlight {
+    .simon .simon-red:focus, .simon .simon-red.highlight {
       background: #f85e4b; }
-  #simon .simon-yellow {
+  .simon .simon-yellow {
     background: #fff732;
     border-bottom-left-radius: 100%;
     border-width: 5px 5px 10px 10px; }
-    #simon .simon-yellow:focus, #simon .simon-yellow.highlight {
+    .simon .simon-yellow:focus, .simon .simon-yellow.highlight {
       background: #fff965; }
-  #simon .simon-blue {
+  .simon .simon-blue {
     background: #019be9;
     border-bottom-right-radius: 100%;
     border-width: 5px 10px 10px 5px; }
-    #simon .simon-blue:focus, #simon .simon-blue.highlight {
+    .simon .simon-blue:focus, .simon .simon-blue.highlight {
       background: #1fb3fe; }
-  #simon .central-bar {
+  .simon .central-bar {
     width: 100px;
     position: absolute;
     background: #222;
@@ -128,16 +128,16 @@ body > .flex-container {
     flex-direction: column;
     justify-content: center; }
     @media screen and (min-width: 500px) {
-      #simon .central-bar {
+      .simon .central-bar {
         top: 245px;
         width: 250px;
         height: 250px; } }
     @media screen and (min-width: 768px) {
-      #simon .central-bar {
+      .simon .central-bar {
         top: 294px;
         width: 300px;
         height: 300px; } }
-    #simon .central-bar h3 {
+    .simon .central-bar h3 {
       font-family: 'Alfa Slab One', sans-serif;
       padding-bottom: 5px;
       padding-top: 5px;
@@ -147,28 +147,28 @@ body > .flex-container {
       color: #eee;
       font-size: 1.0rem; }
       @media screen and (min-width: 450px) {
-        #simon .central-bar h3 {
+        .simon .central-bar h3 {
           font-size: 1.25rem; } }
       @media screen and (min-width: 768px) {
-        #simon .central-bar h3 {
+        .simon .central-bar h3 {
           font-size: 1.5rem; } }
-    #simon .central-bar .controls {
+    .simon .central-bar .controls {
       display: flex;
       flex-direction: row;
       justify-content: space-around;
       align-items: center;
       width: 100%; }
-      #simon .central-bar .controls .count-container,
-      #simon .central-bar .controls .start-btn-container,
-      #simon .central-bar .controls .strict-toggle-container {
+      .simon .central-bar .controls .count-container,
+      .simon .central-bar .controls .start-btn-container,
+      .simon .central-bar .controls .strict-toggle-container {
         display: flex;
         flex-direction: column;
         align-items: center; }
-        #simon .central-bar .controls .count-container span,
-        #simon .central-bar .controls .start-btn-container span,
-        #simon .central-bar .controls .strict-toggle-container span {
+        .simon .central-bar .controls .count-container span,
+        .simon .central-bar .controls .start-btn-container span,
+        .simon .central-bar .controls .strict-toggle-container span {
           color: #eee; }
-      #simon .central-bar .controls .count-container .counter {
+      .simon .central-bar .controls .count-container .counter {
         display: flex;
         flex-direction: row;
         justify-content: center;
@@ -180,38 +180,38 @@ body > .flex-container {
         border-radius: 4px;
         width: 30px;
         height: 45px; }
-      #simon .central-bar .controls .start-btn-container .start-game {
+      .simon .central-bar .controls .start-btn-container .start-game {
         border-radius: 50%;
         width: 30px;
         height: 30px;
         background: red; }
-        #simon .central-bar .controls .start-btn-container .start-game:hover {
+        .simon .central-bar .controls .start-btn-container .start-game:hover {
           cursor: pointer; }
-        #simon .central-bar .controls .start-btn-container .start-game[disabled] {
+        .simon .central-bar .controls .start-btn-container .start-game[disabled] {
           background: rgba(255, 0, 0, 0.8);
           cursor: default; }
-      #simon .central-bar .controls .strict-toggle-container .strict-flex {
+      .simon .central-bar .controls .strict-toggle-container .strict-flex {
         display: flex;
         flex-direction: row;
         align-items: center; }
-        #simon .central-bar .controls .strict-toggle-container .strict-flex input[type=checkbox] {
+        .simon .central-bar .controls .strict-toggle-container .strict-flex input[type=checkbox] {
           position: absolute;
           top: -9999px;
           left: -9999px; }
-        #simon .central-bar .controls .strict-toggle-container .strict-flex label {
+        .simon .central-bar .controls .strict-toggle-container .strict-flex label {
           width: 30px;
           height: 30px;
           border-radius: 50%;
           background: yellow;
           box-shadow: 0px 0px 5px white;
           margin-right: 2px; }
-        #simon .central-bar .controls .strict-toggle-container .strict-flex .indicator {
+        .simon .central-bar .controls .strict-toggle-container .strict-flex .indicator {
           width: 5px;
           height: 5px;
           border-radius: 50%;
           background: black;
           margin-left: 2px; }
-        #simon .central-bar .controls .strict-toggle-container .strict-flex input[type=checkbox]:checked + label + .indicator {
+        .simon .central-bar .controls .strict-toggle-container .strict-flex input[type=checkbox]:checked + label + .indicator {
           background: red; }
 
 /*# sourceMappingURL=style.css.map */

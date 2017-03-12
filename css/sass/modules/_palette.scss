@@ -1,6 +1,6 @@
-$simonBorder: 	#222;
+$simonBorder: 	#222222;
 
-$whiteText:     #eee;
+$whiteText:     #ffffff;
 $darkText:      #333333;
 
 // Buttons
@@ -14,7 +14,7 @@ $simonRed:		#f6321a;
 $simonYellow: 	#fff732;
 $simonBlue: 	#019be9;
 
-$simonGShade:	lighten($simonGreen, 10%);
-$simonRShade:	lighten($simonRed, 10%);
-$simonYShade:	lighten($simonYellow, 10%);
-$simonBShade:	lighten($simonBlue, 10%);
+$simonGShade:	lighten($simonGreen, 15%);
+$simonRShade:	lighten($simonRed, 15%);
+$simonYShade:	lighten($simonYellow, 15%);
+$simonBShade:	lighten($simonBlue, 15%);

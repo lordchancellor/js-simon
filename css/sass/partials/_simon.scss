@@ -48,8 +48,11 @@
 	.simon-green {
 		background: $simonGreen;
 		border-top-left-radius: 100%;
-		border-right-width: 5px;
-		border-width: 10px 5px 5px 10px;
+		border-width: 6px 3px 3px 6px;
+
+		@media screen and (min-width: 500px) {
+			border-width: 10px 5px 5px 10px;
+		}
 
 		&:focus,
 		&.highlight {
@@ -60,7 +63,11 @@
 	.simon-red {
 		background: $simonRed;
 		border-top-right-radius: 100%;
-		border-width: 10px 10px 5px 5px;
+		border-width: 6px 6px 3px 3px;
+
+		@media screen and (min-width: 500px) {
+			border-width: 10px 10px 5px 5px;
+		}
 
 		&:focus,
 		&.highlight {
@@ -71,7 +78,11 @@
 	.simon-yellow {
 		background: $simonYellow;
 		border-bottom-left-radius: 100%;
-		border-width: 5px 5px 10px 10px;
+		border-width: 3px 3px 6px 6px;
+
+		@media screen and (min-width: 500px) {
+			border-width: 5px 5px 10px 10px;
+		}
 
 		&:focus,
 		&.highlight {
@@ -82,7 +93,11 @@
 	.simon-blue {
 		background: $simonBlue;
 		border-bottom-right-radius: 100%;
-		border-width: 5px 10px 10px 5px;
+		border-width: 3px 6px 6px 3px;
+
+		@media screen and (min-width: 500px) {
+			border-width: 5px 10px 10px 5px;
+		}
 
 		&:focus,
 		&.highlight {
@@ -117,20 +132,19 @@
 
 		h3 {
 			font-family: 'Alfa Slab One', sans-serif;
-			@include paddingY(5px);
+			padding-bottom: 25px;
 			margin: 0;
 			width: 100%;
 			text-align: center;
-			//background: $simonBorder;
 			color: $whiteText;
-			font-size: 1.0rem;
+			font-size: 1.3rem;
 
-			@media screen and (min-width: 450px) {
-				font-size: 1.25rem;
+			@media screen and (min-width: 500px) {
+				font-size: 1.75rem;
 			}
 
 			@media screen and (min-width: 768px) {
-				font-size: 1.5rem;
+				font-size: 2.0rem;
 			}
 		}
 
@@ -138,8 +152,12 @@
 			display: flex;
 			flex-direction: row;
 			justify-content: space-around;
-			align-items: center;
-			width: 100%;
+			align-items: flex-start;
+			width: 90%;
+
+			@media screen and (min-width: 500px) {
+				width: 100%;
+			}
 
 			.count-container,
 			.start-btn-container,
@@ -150,6 +168,11 @@
 
 				span {
 					color: $whiteText;
+					font-size: 0.85rem;
+
+					@media screen and (mim-width: 500px) {
+						font-size: 1.0rem;
+					}
 				}
 			}
 
@@ -165,7 +188,15 @@
 					border: 1px solid #999;
 					border-radius: 4px;
 					width: 30px;
-					height: 45px;
+					height: 30px;
+
+					@media screen and (min-width: 500px) {
+						height: 35px;
+					}
+
+					@media screen and (min-width: 768px) {
+						height: 45px
+					}
 				}
 			}
 
@@ -205,6 +236,7 @@
 						border-radius: 50%;
 						background: yellow;
 						border: 2px outset buttonface;
+						margin: 0;
 
 						&:hover,
 						&:focus {

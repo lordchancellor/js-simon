@@ -9,10 +9,10 @@ body {
 .btn-github {
   background: #333333;
   border-color: #111111;
-  color: #eee; }
+  color: #ffffff; }
   .btn-github:hover {
     background: #222222;
-    color: #eee; }
+    color: #ffffff; }
 
 header {
   display: flex;
@@ -65,7 +65,7 @@ body > .flex-container {
   .simon .simon-red,
   .simon .simon-yellow,
   .simon .simon-blue {
-    border: solid #222;
+    border: solid #222222;
     width: 150px;
     height: 150px; }
     @media screen and (min-width: 500px) {
@@ -93,32 +93,43 @@ body > .flex-container {
   .simon .simon-green {
     background: #49d759;
     border-top-left-radius: 100%;
-    border-right-width: 5px;
-    border-width: 10px 5px 5px 10px; }
+    border-width: 6px 3px 3px 6px; }
+    @media screen and (min-width: 500px) {
+      .simon .simon-green {
+        border-width: 10px 5px 5px 10px; } }
     .simon .simon-green:focus, .simon .simon-green.highlight {
-      background: #73e07f; }
+      background: #88e592; }
   .simon .simon-red {
     background: #f6321a;
     border-top-right-radius: 100%;
-    border-width: 10px 10px 5px 5px; }
+    border-width: 6px 6px 3px 3px; }
+    @media screen and (min-width: 500px) {
+      .simon .simon-red {
+        border-width: 10px 10px 5px 5px; } }
     .simon .simon-red:focus, .simon .simon-red.highlight {
-      background: #f85e4b; }
+      background: #f97464; }
   .simon .simon-yellow {
     background: #fff732;
     border-bottom-left-radius: 100%;
-    border-width: 5px 5px 10px 10px; }
+    border-width: 3px 3px 6px 6px; }
+    @media screen and (min-width: 500px) {
+      .simon .simon-yellow {
+        border-width: 5px 5px 10px 10px; } }
     .simon .simon-yellow:focus, .simon .simon-yellow.highlight {
-      background: #fff965; }
+      background: #fffa7f; }
   .simon .simon-blue {
     background: #019be9;
     border-bottom-right-radius: 100%;
-    border-width: 5px 10px 10px 5px; }
+    border-width: 3px 6px 6px 3px; }
+    @media screen and (min-width: 500px) {
+      .simon .simon-blue {
+        border-width: 5px 10px 10px 5px; } }
     .simon .simon-blue:focus, .simon .simon-blue.highlight {
-      background: #1fb3fe; }
+      background: #38bcfe; }
   .simon .central-bar {
     width: 100px;
     position: absolute;
-    background: #222;
+    background: #222222;
     top: 205px;
     width: 175px;
     height: 175px;
@@ -139,25 +150,27 @@ body > .flex-container {
         height: 300px; } }
     .simon .central-bar h3 {
       font-family: 'Alfa Slab One', sans-serif;
-      padding-bottom: 5px;
-      padding-top: 5px;
+      padding-bottom: 25px;
       margin: 0;
       width: 100%;
       text-align: center;
-      color: #eee;
-      font-size: 1.0rem; }
-      @media screen and (min-width: 450px) {
+      color: #ffffff;
+      font-size: 1.3rem; }
+      @media screen and (min-width: 500px) {
         .simon .central-bar h3 {
-          font-size: 1.25rem; } }
+          font-size: 1.75rem; } }
       @media screen and (min-width: 768px) {
         .simon .central-bar h3 {
-          font-size: 1.5rem; } }
+          font-size: 2.0rem; } }
     .simon .central-bar .controls {
       display: flex;
       flex-direction: row;
       justify-content: space-around;
-      align-items: center;
-      width: 100%; }
+      align-items: flex-start;
+      width: 90%; }
+      @media screen and (min-width: 500px) {
+        .simon .central-bar .controls {
+          width: 100%; } }
       .simon .central-bar .controls .count-container,
       .simon .central-bar .controls .start-btn-container,
       .simon .central-bar .controls .strict-toggle-container {
@@ -167,7 +180,13 @@ body > .flex-container {
         .simon .central-bar .controls .count-container span,
         .simon .central-bar .controls .start-btn-container span,
         .simon .central-bar .controls .strict-toggle-container span {
-          color: #eee; }
+          color: #ffffff;
+          font-size: 0.85rem; }
+          @media screen and (mim-width: 500px) {
+            .simon .central-bar .controls .count-container span,
+            .simon .central-bar .controls .start-btn-container span,
+            .simon .central-bar .controls .strict-toggle-container span {
+              font-size: 1.0rem; } }
       .simon .central-bar .controls .count-container .counter {
         display: flex;
         flex-direction: row;
@@ -179,7 +198,13 @@ body > .flex-container {
         border: 1px solid #999;
         border-radius: 4px;
         width: 30px;
-        height: 45px; }
+        height: 30px; }
+        @media screen and (min-width: 500px) {
+          .simon .central-bar .controls .count-container .counter {
+            height: 35px; } }
+        @media screen and (min-width: 768px) {
+          .simon .central-bar .controls .count-container .counter {
+            height: 45px; } }
       .simon .central-bar .controls .start-btn-container .start-game {
         border-radius: 50%;
         width: 30px;
@@ -203,7 +228,8 @@ body > .flex-container {
           height: 30px;
           border-radius: 50%;
           background: yellow;
-          border: 2px outset buttonface; }
+          border: 2px outset buttonface;
+          margin: 0; }
           .simon .central-bar .controls .strict-toggle-container .strict-flex label:hover, .simon .central-bar .controls .strict-toggle-container .strict-flex label:focus {
             cursor: pointer; }
         .simon .central-bar .controls .strict-toggle-container .strict-flex .indicator {

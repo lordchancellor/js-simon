@@ -13,12 +13,14 @@ const setup = {
 		const yellow = document.getElementById('yellow');
 		const blue = document.getElementById('blue');
 		const startBtn = document.getElementById('start-game');
+		const strictBtn = document.getElementById('strict-mode');
 
 		green.addEventListener('click', () => simon.checkInput(1));
 		red.addEventListener('click', () => simon.checkInput(2));
 		yellow.addEventListener('click', () => simon.checkInput(3));
 		blue.addEventListener('click', () => simon.checkInput(4));
 		startBtn.addEventListener('click', () => simon.go());
+		strictBtn.addEventListener('click', () => ui.toggleStrict());
 	},
 	
 	// Setup the Simon object, allowing for custom setup if required
@@ -64,6 +66,12 @@ const ui = {
 		const btn = document.getElementsByClassName('start-game')[0];
 
 		btn.disabled = active;
+	},
+
+	toggleStrict: function toggleStrict() {
+		const checked = document.getElementById('strict-mode').checked;
+
+		simon.setStrict(checked);
 	}
 };
 
@@ -114,6 +122,10 @@ const simon = {
 
 	setSequence: function setSequence(arr) {
 		this.sequence = arr;
+	},
+
+	setStrict: function setStrict(strict) {
+		this.isStrict = strict;
 	},
 
 	// Add a value to the current sequence

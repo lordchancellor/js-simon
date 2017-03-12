@@ -249,37 +249,45 @@ body > .flex-container {
             height: 45px; } }
       .simon .central-bar .controls .start-btn-container .start-game {
         border-radius: 50%;
-        width: 30px;
-        height: 30px;
-        background: red; }
+        background: #fffb2c;
+        width: 25px;
+        height: 25px;
+        margin-top: 1px; }
+        @media screen and (min-width: 500px) {
+          .simon .central-bar .controls .start-btn-container .start-game {
+            width: 30px;
+            height: 30px;
+            margin-top: 3px; } }
+        @media screen and (min-width: 768px) {
+          .simon .central-bar .controls .start-btn-container .start-game {
+            margin-top: 8px; } }
         .simon .central-bar .controls .start-btn-container .start-game:hover {
           cursor: pointer; }
         .simon .central-bar .controls .start-btn-container .start-game[disabled] {
-          background: rgba(255, 0, 0, 0.8);
+          background: grey;
           cursor: default; }
-      .simon .central-bar .controls .strict-toggle-container .strict-flex {
-        display: flex;
-        flex-direction: row;
-        align-items: center; }
-        .simon .central-bar .controls .strict-toggle-container .strict-flex input[type=checkbox] {
-          position: absolute;
-          top: -9999px;
-          left: -9999px; }
-        .simon .central-bar .controls .strict-toggle-container .strict-flex label {
-          width: 30px;
-          height: 30px;
-          border-radius: 50%;
-          background: yellow;
-          border: 2px outset buttonface;
-          margin: 0; }
-          .simon .central-bar .controls .strict-toggle-container .strict-flex label:hover, .simon .central-bar .controls .strict-toggle-container .strict-flex label:focus {
-            cursor: pointer; }
-        .simon .central-bar .controls .strict-toggle-container .strict-flex .indicator {
-          width: 5px;
-          height: 5px;
-          border-radius: 50%;
-          background: black; }
-        .simon .central-bar .controls .strict-toggle-container .strict-flex input[type=checkbox]:checked + .indicator {
-          background: red; }
+      .simon .central-bar .controls .strict-toggle-container input[type=checkbox] {
+        position: absolute;
+        top: -9999px;
+        left: -9999px; }
+      .simon .central-bar .controls .strict-toggle-container label {
+        border-radius: 50%;
+        background: #c9302c;
+        border: 2px outset buttonface;
+        margin: 0;
+        width: 25px;
+        height: 25px; }
+        @media screen and (min-width: 500px) {
+          .simon .central-bar .controls .strict-toggle-container label {
+            width: 30px;
+            height: 30px;
+            margin-top: 2px; } }
+        @media screen and (min-width: 768px) {
+          .simon .central-bar .controls .strict-toggle-container label {
+            margin-top: 7px; } }
+        .simon .central-bar .controls .strict-toggle-container label:hover, .simon .central-bar .controls .strict-toggle-container label:focus {
+          cursor: pointer; }
+      .simon .central-bar .controls .strict-toggle-container input[type=checkbox]:checked + label {
+        background: #449d44; }
 
 /*# sourceMappingURL=style.css.map */

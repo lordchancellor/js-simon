@@ -205,57 +205,65 @@
 			.start-btn-container {
 				.start-game {
 					border-radius: 50%;
-					width: 30px;
-					height: 30px;
-					background: red;
+					background: $startButton;
+					width: 25px;
+					height: 25px;
+					margin-top: 1px;
+
+					@media screen and (min-width: 500px) {
+						width: 30px;
+						height: 30px;
+						margin-top: 3px;
+					}
+
+					@media screen and (min-width: 768px) {
+						margin-top: 8px;
+					}
 
 					&:hover {
 						cursor: pointer;
 					}
 
 					&[disabled] {
-						background: rgba(red, 0.8);
+						background: grey;
 						cursor: default;
 					}
 				}
 			}
 
 			.strict-toggle-container {
-				.strict-flex {
-					display: flex;
-					flex-direction: row;
-					align-items: center;
-					
-					input[type=checkbox] {
-						position: absolute;
-						top: -9999px;
-						left: -9999px;
-					}
+				input[type=checkbox] {
+					position: absolute;
+					top: -9999px;
+					left: -9999px;
+				}
 
-					label {
+				label {
+					border-radius: 50%;
+					background: $strictOff;
+					border: 2px outset buttonface;
+					margin: 0;
+					width: 25px;
+					height: 25px;
+
+					@media screen and (min-width: 500px) {
 						width: 30px;
 						height: 30px;
-						border-radius: 50%;
-						background: yellow;
-						border: 2px outset buttonface;
-						margin: 0;
-
-						&:hover,
-						&:focus {
-							cursor: pointer;
-						}
+						margin-top: 2px;
 					}
 
-					.indicator {
-						width: 5px;
-						height: 5px;
-						border-radius: 50%;
-						background: black;
+					@media screen and (min-width: 768px) {
+						margin-top: 7px;
 					}
 
-					input[type=checkbox]:checked + .indicator {
-						background: red;
+					&:hover,
+					&:focus {
+						cursor: pointer;
 					}
+				}
+
+				input[type=checkbox]:checked + label {
+					background: $strictOn;
 				}
 			}
 		}

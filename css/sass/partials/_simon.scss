@@ -45,6 +45,10 @@
 		&:focus {
 			cursor: pointer;
 		}
+
+		&[disabled] {
+			cursor: not-allowed;
+		}
 	}
 	
 	.simon-green {
@@ -56,9 +60,18 @@
 			border-width: 10px 5px 5px 10px;
 		}
 
+		&:hover,
 		&:focus,
 		&.highlight {
 			background: $simonGShade;
+		}
+
+		&:not(.highlight) {
+			&[disabled] {
+				&:hover {
+					background: $simonGreen;
+				}
+			}
 		}
 	}
 
@@ -71,9 +84,18 @@
 			border-width: 10px 10px 5px 5px;
 		}
 
+		&:hover,
 		&:focus,
 		&.highlight {
 			background: $simonRShade;
+		}
+
+		&:not(.highlight) {
+			&[disabled] {
+				&:hover {
+					background: $simonRed;
+				}
+			}
 		}
 	}
 
@@ -86,9 +108,18 @@
 			border-width: 5px 5px 10px 10px;
 		}
 
+		&:hover,
 		&:focus,
 		&.highlight {
 			background: $simonYShade;
+		}
+
+		&:not(.highlight) {
+			&[disabled] {
+				&:hover {
+					background: $simonYellow;
+				}
+			}
 		}
 	}
 
@@ -101,9 +132,18 @@
 			border-width: 5px 10px 10px 5px;
 		}
 
+		&:hover,
 		&:focus,
 		&.highlight {
 			background: $simonBShade;
+		}
+
+		&:not(.highlight) {
+			&[disabled] {
+				&:hover {
+					background: $simonBlue;
+				}
+			}
 		}
 	}
 
@@ -225,7 +265,7 @@
 					}
 
 					&[disabled] {
-						background: grey;
+						background: $startBtnDis;
 						cursor: default;
 					}
 				}

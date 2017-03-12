@@ -72,6 +72,18 @@ const ui = {
 		const checked = document.getElementById('strict-mode').checked;
 
 		simon.setStrict(checked);
+	},
+
+	toggleButtons: function toggleButtons(disable) {
+		const green = document.getElementsByClassName('simon-green')[0];
+		const red = document.getElementsByClassName('simon-red')[0];
+		const yellow = document.getElementsByClassName('simon-yellow')[0];
+		const blue = document.getElementsByClassName('simon-blue')[0];
+
+		green.disabled = disable;
+		red.disabled = disable;
+		yellow.disabled = disable;
+		blue.disabled = disable;
 	}
 };
 
@@ -89,12 +101,14 @@ const simon = {
 			this.count = num;
 			this.generateSequence(num);
 			this.logSequence();
+			ui.toggleButtons(true);
 			this.highlightSequence();
 		}
 		else {
 			ui.toggleStart(true);
 			this.generateSequence(this.count);
 			this.logSequence();
+			ui.toggleButtons(true);
 			this.highlightSequence();
 		}
 	},
@@ -190,6 +204,8 @@ const simon = {
 
 	// Highlights the current sequence in turn
 	highlightSequence: function highlightSequence(i = 0) {
+//		ui.toggleButtons(true);
+
 		if (i < simon.getSequence().length) {
 			let btn = document.querySelectorAll('[data-value="' + simon.getSequence()[i] + '"]')[0];
 			btn.classList.add('highlight');
@@ -200,6 +216,12 @@ const simon = {
 				setTimeout(() => highlightSequence(i + 1), 200);
 			}, 700);
 		}
+
+		if (i === simon.getSequence().length) {
+			ui.toggleButtons(false);
+		}
+
+//		ui.toggleButtons(false);
 	},
 
 	// Go to the next level

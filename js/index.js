@@ -184,6 +184,7 @@ const simon = {
 
 			if (!this.isStrict && this.retry) {
 				this.retry = false;
+				ui.toggleButtons(true);
 				this.highlightSequence();
 			}
 			else {

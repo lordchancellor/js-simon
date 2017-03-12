@@ -203,15 +203,15 @@ body > .flex-container {
           height: 30px;
           border-radius: 50%;
           background: yellow;
-          box-shadow: 0px 0px 5px white;
-          margin-right: 2px; }
+          border: 2px outset buttonface; }
+          .simon .central-bar .controls .strict-toggle-container .strict-flex label:hover, .simon .central-bar .controls .strict-toggle-container .strict-flex label:focus {
+            cursor: pointer; }
         .simon .central-bar .controls .strict-toggle-container .strict-flex .indicator {
           width: 5px;
           height: 5px;
           border-radius: 50%;
-          background: black;
-          margin-left: 2px; }
-        .simon .central-bar .controls .strict-toggle-container .strict-flex input[type=checkbox]:checked + label + .indicator {
+          background: black; }
+        .simon .central-bar .controls .strict-toggle-container .strict-flex input[type=checkbox]:checked + .indicator {
           background: red; }
 
 /*# sourceMappingURL=style.css.map */

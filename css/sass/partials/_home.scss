@@ -1,13 +1,40 @@
 // Header
 header {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    @include paddingX(50px);
     background: rgba(255, 255, 255, 0.5);
 
+    @media screen and (min-width: 500px) {
+        flex-direction: row;
+        @include paddingX(25px);
+    }
+
+    @media screen and (min-width: 768px) {
+        @include paddingX(50px);
+    }
+
+    h1 {
+        @include marginY(5px);
+        font-size: 1.75rem;
+        text-align: center;
+
+        @media screen and (min-width: 500px) {
+            margin-top: 20px;
+            margin-bottom: 10px;
+
+            font-size: 2.25rem;
+            text-align: left;
+        }
+    }
+
     h5 {
+        margin-top: 5px;
+
+        @media screen and (min-width: 500px) {
+            margin-top: 10px;
+        }
         a {
             color: $darkText;
 
@@ -15,6 +42,14 @@ header {
             &:focus {
                 color: $darkText;
             }
+        }
+    }
+
+    .btn {
+        margin-bottom: 5px;
+
+        @media screen and (min-width: 500px) {
+            margin-bottom: 0;
         }
     }
 }

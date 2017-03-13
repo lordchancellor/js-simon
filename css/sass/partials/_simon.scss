@@ -4,6 +4,7 @@
 	align-items: center;
 	margin-top: 20px;
 	width: 300px;
+	position: relative;
 	
 	@media screen and (min-width: 500px) {
 		margin-top: 30px;
@@ -151,7 +152,8 @@
 		width: 100px;
 		position: absolute;
 		background: $simonBorder;
-		top: 187px;
+		top: 62px;
+		left: 62px;
 		width: 175px;
 		height: 175px;
 		border-radius: 100%;
@@ -161,13 +163,15 @@
 		justify-content: center;
 
 		@media screen and (min-width: 500px) {
-			top: 224px;
+			top: 100px;
+			left: 100px;
 			width: 250px;
 			height: 250px;
 		}
 
 		@media screen and (min-width: 768px) {
-			top: 294px;
+			top: 150px;
+			left: 150px;
 			width: 300px;
 			height: 300px;
 		}

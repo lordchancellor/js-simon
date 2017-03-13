@@ -89,7 +89,8 @@ body > .flex-container {
   flex-direction: column;
   align-items: center;
   margin-top: 20px;
-  width: 300px; }
+  width: 300px;
+  position: relative; }
   @media screen and (min-width: 500px) {
     .simon {
       margin-top: 30px;
@@ -190,7 +191,8 @@ body > .flex-container {
     width: 100px;
     position: absolute;
     background: #222222;
-    top: 187px;
+    top: 62px;
+    left: 62px;
     width: 175px;
     height: 175px;
     border-radius: 100%;
@@ -200,12 +202,14 @@ body > .flex-container {
     justify-content: center; }
     @media screen and (min-width: 500px) {
       .simon .central-bar {
-        top: 224px;
+        top: 100px;
+        left: 100px;
         width: 250px;
         height: 250px; } }
     @media screen and (min-width: 768px) {
       .simon .central-bar {
-        top: 294px;
+        top: 150px;
+        left: 150px;
         width: 300px;
         height: 300px; } }
     .simon .central-bar h3 {

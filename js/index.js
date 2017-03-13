@@ -14,10 +14,22 @@ const setup = {
 		const startBtn = document.getElementById('start-game');
 		const strictBtn = document.getElementById('strict-mode');
 
-		green.addEventListener('click', () => simon.checkInput(1));
-		red.addEventListener('click', () => simon.checkInput(2));
-		yellow.addEventListener('click', () => simon.checkInput(3));
-		blue.addEventListener('click', () => simon.checkInput(4));
+		green.addEventListener('click', () => {
+			simon.checkInput(1);
+			ui.playAudio(1);
+		});
+		red.addEventListener('click', () => {
+			simon.checkInput(2);
+			ui.playAudio(2);
+		});
+		yellow.addEventListener('click', () => {
+			simon.checkInput(3);
+			ui.playAudio(3);
+		});
+		blue.addEventListener('click', () => {
+			simon.checkInput(4);
+			ui.playAudio(4);
+		});
 		startBtn.addEventListener('click', () => simon.go());
 		strictBtn.addEventListener('click', () => ui.toggleStrict());
 	},
@@ -37,6 +49,11 @@ const setup = {
 
 // UI API to control changes to the UI
 const ui = {
+	greenSound: new Audio('https://s3.amazonaws.com/freecodecamp/simonSound1.mp3'),
+	redSound: new Audio('https://s3.amazonaws.com/freecodecamp/simonSound2.mp3'),
+	yellowSound: new Audio('https://s3.amazonaws.com/freecodecamp/simonSound3.mp3'),
+	blueSound: new Audio('https://s3.amazonaws.com/freecodecamp/simonSound4.mp3'),
+
 	updateCount: function updateCount(count) {
 		document.getElementsByClassName('counter')[0].textContent = count < 10 ? '0' + count : count;
 	},
@@ -82,6 +99,29 @@ const ui = {
 		red.disabled = disable;
 		yellow.disabled = disable;
 		blue.disabled = disable;
+	},
+
+	playAudio: function playAudio(btn) {
+		switch (btn) {
+			case 1:
+				console.log('playing green');
+				this.greenSound.play();
+				break;
+			case 2:
+				console.log('playing red');
+				this.redSound.play();
+				break;
+			case 3:
+				console.log('playing yellow');
+				this.yellowSound.play();
+				break;
+			case 4:
+				console.log('playing blue');
+				this.blueSound.play();
+				break;
+			default:
+				console.error('Invalid audio request');
+		}
 	}
 };
 
@@ -200,8 +240,12 @@ const simon = {
 	// Highlights the current sequence in turn - references simon properties with the 'simon' prefix due to recursion
 	highlightSequence: function highlightSequence(i = 0) {
 		if (i < simon.getSequence().length) {
-			let btn = document.querySelectorAll('[data-value="' + simon.getSequence()[i] + '"]')[0];
+			const current = simon.getSequence()[i];
+			const btn = document.querySelectorAll('[data-value="' + current + '"]')[0];
+
 			btn.classList.add('highlight');
+
+			ui.playAudio(current);
 
 			setTimeout(() => {
 				btn.classList.remove('highlight');

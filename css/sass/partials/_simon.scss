@@ -46,6 +46,10 @@
 			cursor: pointer;
 		}
 
+		&:focus {
+			outline: none;
+		}
+
 		&[disabled] {
 			cursor: not-allowed;
 		}
@@ -61,7 +65,6 @@
 		}
 
 		&:hover,
-		&:focus,
 		&.highlight {
 			background: $simonGShade;
 		}
@@ -85,7 +88,6 @@
 		}
 
 		&:hover,
-		&:focus,
 		&.highlight {
 			background: $simonRShade;
 		}
@@ -109,7 +111,6 @@
 		}
 
 		&:hover,
-		&:focus,
 		&.highlight {
 			background: $simonYShade;
 		}
@@ -133,7 +134,6 @@
 		}
 
 		&:hover,
-		&:focus,
 		&.highlight {
 			background: $simonBShade;
 		}

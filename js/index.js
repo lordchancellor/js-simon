@@ -3,7 +3,6 @@ const setup = {
 	go: function go() {
 		this.setDate();
 		this.setupSimon();
-		this.setupUI();
 		this.setListeners();
 	},
 
@@ -28,11 +27,7 @@ const setup = {
 		simon.setCount(count);
 		simon.setPosition(pos);
 		simon.setSequence(seq);
-	},
-
-	setupUI: function setupUI() {
-		// Setup the count
-		ui.updateCount(simon.getCount());
+		ui.updateCount(count);
 	},
 
 	setDate: function setDate() {
@@ -62,18 +57,21 @@ const ui = {
 		setTimeout(() => msgBar.style.display = "none", 2000);
 	},
 
+	// Disable the start button while the game is running
 	toggleStart: function toggleStart(active) {
 		const btn = document.getElementsByClassName('start-game')[0];
 
 		btn.disabled = active;
 	},
 
+	// Toggle between strict and normal game modes
 	toggleStrict: function toggleStrict() {
 		const checked = document.getElementById('strict-mode').checked;
 
 		simon.setStrict(checked);
 	},
 
+	// Disable the colour buttons while Simon is rcreating the sequence
 	toggleButtons: function toggleButtons(disable) {
 		const green = document.getElementsByClassName('simon-green')[0];
 		const red = document.getElementsByClassName('simon-red')[0];
@@ -96,40 +94,32 @@ const simon = {
 	retry: true,
 
 	go: function go(num = 0) {
-		// Production purposes
+		// Allows the game to kick off at a level above 1
 		if (num) {
 			this.count = num;
+			ui.toggleStart(true);
 			this.generateSequence(num);
-			this.logSequence();
+			this.logSequence();	// Deprecated
 			ui.toggleButtons(true);
 			this.highlightSequence();
 		}
 		else {
 			ui.toggleStart(true);
 			this.generateSequence(this.count);
-			this.logSequence();
+			this.logSequence(); // Deprecated
 			ui.toggleButtons(true);
 			this.highlightSequence();
 		}
-	},
-
-	getCount: function getCount() {
-		return this.count;
 	},
 
 	setCount: function setCount(num) {
 		this.count = num;
 	},
 
-	getPosition: function getPosition() {
-		return this.position;
-	},
-
 	setPosition: function setPosition(pos) {
 		this.position = pos;
 	},
 
-	// Get the sequence
 	getSequence: function getSequence() {
 		return this.sequence;
 	},
@@ -142,12 +132,12 @@ const simon = {
 		this.isStrict = strict;
 	},
 
-	// Add a value to the current sequence
+	// Add a value to the sequence
 	addToSequence: function addToSequence(num) {
 		this.sequence = [...this.sequence, num];
 	},
 
-	// Possibly just for production purposes - print out the colour sequence
+	// Deprecated
 	logSequence: function logSequence() {
 		for (let i of this.sequence) {
 			console.log(getColor(i));
@@ -183,11 +173,15 @@ const simon = {
 			ui.notify('Incorrect');
 
 			if (!this.isStrict && this.retry) {
-				this.retry = false;
-				ui.toggleButtons(true);
-				this.highlightSequence();
+				setTimeout(() => {
+					ui.notify("Let's give that another shot...");
+					this.retry = false;
+					ui.toggleButtons(true);
+					setTimeout(() => this.highlightSequence(), 2500);
+				}, 2000);
 			}
 			else {
+				ui.notify('Game Over');
 				this.reset();
 			}
 		}
@@ -203,10 +197,8 @@ const simon = {
 		ui.toggleStart(false);
 	},
 
-	// Highlights the current sequence in turn
+	// Highlights the current sequence in turn - references simon properties with the 'simon' prefix due to recursion
 	highlightSequence: function highlightSequence(i = 0) {
-//		ui.toggleButtons(true);
-
 		if (i < simon.getSequence().length) {
 			let btn = document.querySelectorAll('[data-value="' + simon.getSequence()[i] + '"]')[0];
 			btn.classList.add('highlight');
@@ -221,8 +213,6 @@ const simon = {
 		if (i === simon.getSequence().length) {
 			ui.toggleButtons(false);
 		}
-
-//		ui.toggleButtons(false);
 	},
 
 	// Go to the next level
@@ -240,6 +230,7 @@ const simon = {
 	}
 };
 
+// Deprecated
 const getColor = function getColor(num) {
 	switch (num) {
 		case 1:

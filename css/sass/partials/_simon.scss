@@ -13,6 +13,11 @@
 
 	@media screen and (min-width: 768px) {
 		margin-top: 50px;
+		width: 510px;
+	}
+
+	@media screen and (min-width: 1450px) {
+		margin-top: 50px;
 		width: 600px;
 	}
 
@@ -38,6 +43,11 @@
 		}
 
 		@media screen and (min-width: 768px) {
+			width: 255px;
+			height: 255px;
+		}
+
+		@media screen and (min-width: 1450px) {
 			width: 300px;
 			height: 300px;
 		}
@@ -170,10 +180,15 @@
 		}
 
 		@media screen and (min-width: 768px) {
-			top: 150px;
-			left: 150px;
+			top: 105px;
+			left: 105px;
 			width: 300px;
 			height: 300px;
+		}
+
+		@media screen and (min-width: 1450px) {
+			top: 150px;
+			left: 150px;
 		}
 
 		h3 {

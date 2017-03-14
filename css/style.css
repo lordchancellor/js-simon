@@ -717,12 +717,14 @@ body > .flex-container {
         .simon .central-bar .controls .start-btn-container span,
         .simon .central-bar .controls .strict-toggle-container span {
           color: #ffffff;
-          font-size: 0.85rem; }
-          @media screen and (mim-width: 500px) {
+          font-size: 0.85rem;
+          margin-bottom: 3px; }
+          @media screen and (min-width: 500px) {
             .simon .central-bar .controls .count-container span,
             .simon .central-bar .controls .start-btn-container span,
             .simon .central-bar .controls .strict-toggle-container span {
-              font-size: 1.0rem; } }
+              font-size: 1.0rem;
+              margin-bottom: 5px; } }
       .simon .central-bar .controls .count-container .counter {
         display: flex;
         flex-direction: row;
@@ -784,7 +786,10 @@ body > .flex-container {
       .simon .central-bar .controls .strict-toggle-container input[type=checkbox]:checked + label {
         background: #449d44; }
     .simon .central-bar .reset-container {
-      margin-top: 10px; }
+      margin-top: 5px; }
+      @media screen and (min-width: 500px) {
+        .simon .central-bar .reset-container {
+          margin-top: 10px; } }
       .simon .central-bar .reset-container span {
         color: #ffffff;
         font-size: 0.85rem;

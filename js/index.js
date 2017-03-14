@@ -259,16 +259,6 @@ const simon = {
 			this.retry = true;
 		}
 
-		//this.go(1);
-		/*
-		ui.toggleStart(true);
-		this.generateSequence(this.count);
-		ui.toggleButtons(true);
-		this.highlightSequence();
-
-		*/
-
-
 		this.addToSequence(Math.floor(Math.random() * 4) + 1);
 		ui.toggleButtons(true);
 		this.highlightSequence();

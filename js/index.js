@@ -252,14 +252,26 @@ const simon = {
 	nextLevel: function nextLevel() {
 		this.count++;
 		this.position = 0;
-		this.sequence = [];
+		//this.sequence = [];
 		ui.updateCount(this.count);
 		
 		if (!this.isStrict) {
 			this.retry = true;
 		}
 
-		this.go(this.count);
+		//this.go(1);
+		/*
+		ui.toggleStart(true);
+		this.generateSequence(this.count);
+		ui.toggleButtons(true);
+		this.highlightSequence();
+
+		*/
+
+
+		this.addToSequence(Math.floor(Math.random() * 4) + 1);
+		ui.toggleButtons(true);
+		this.highlightSequence();
 	}
 };
 

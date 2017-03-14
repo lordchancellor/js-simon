@@ -190,12 +190,18 @@ const simon = {
 				this.position++;
 			}
 			else {
-				ui.notify('Correct!');
+				if (this.count < 21) {
+					ui.notify('Correct!');
 
-				setTimeout(() => {
-					ui.notify('Next level coming up...');
-					setTimeout(() => this.nextLevel(), 2500);
-				}, 2000);
+					setTimeout(() => {
+						ui.notify('Next level coming up...');
+						setTimeout(() => this.nextLevel(), 2500);
+					}, 2000);
+				}
+				else {
+					ui.notify('Congratulations - you win!');
+					this.reset();
+				}
 			}
 		}
 		else {

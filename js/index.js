@@ -104,19 +104,15 @@ const ui = {
 	playAudio: function playAudio(btn) {
 		switch (btn) {
 			case 1:
-				console.log('playing green');
 				this.greenSound.play();
 				break;
 			case 2:
-				console.log('playing red');
 				this.redSound.play();
 				break;
 			case 3:
-				console.log('playing yellow');
 				this.yellowSound.play();
 				break;
 			case 4:
-				console.log('playing blue');
 				this.blueSound.play();
 				break;
 			default:
@@ -139,14 +135,12 @@ const simon = {
 			this.count = num;
 			ui.toggleStart(true);
 			this.generateSequence(num);
-			this.logSequence();	// Deprecated
 			ui.toggleButtons(true);
 			this.highlightSequence();
 		}
 		else {
 			ui.toggleStart(true);
 			this.generateSequence(this.count);
-			this.logSequence(); // Deprecated
 			ui.toggleButtons(true);
 			this.highlightSequence();
 		}
@@ -175,13 +169,6 @@ const simon = {
 	// Add a value to the sequence
 	addToSequence: function addToSequence(num) {
 		this.sequence = [...this.sequence, num];
-	},
-
-	// Deprecated
-	logSequence: function logSequence() {
-		for (let i of this.sequence) {
-			console.log(getColor(i));
-		}
 	},
 
 	// Generate a new sequence
@@ -271,22 +258,6 @@ const simon = {
 		}
 
 		this.go(this.count);
-	}
-};
-
-// Deprecated
-const getColor = function getColor(num) {
-	switch (num) {
-		case 1:
-			return 'green';
-		case 2:
-			return 'red';
-		case 3:
-			return 'yellow';
-		case 4:
-			return 'blue';
-		default:
-			console.log('Invalid colour');
 	}
 };
 

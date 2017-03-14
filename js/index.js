@@ -245,8 +245,8 @@ const simon = {
 			setTimeout(() => {
 				btn.classList.remove('highlight');
 
-				setTimeout(() => highlightSequence(i + 1), 200);
-			}, 700);
+				setTimeout(() => highlightSequence(i + 1), 100);
+			}, 500);
 		}
 
 		if (i === simon.getSequence().length) {

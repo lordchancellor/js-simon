@@ -783,5 +783,23 @@ body > .flex-container {
           cursor: pointer; }
       .simon .central-bar .controls .strict-toggle-container input[type=checkbox]:checked + label {
         background: #449d44; }
+    .simon .central-bar .reset-container {
+      margin-top: 10px; }
+      .simon .central-bar .reset-container span {
+        color: #ffffff;
+        font-size: 0.85rem;
+        margin-right: 5px; }
+        @media screen and (mim-width: 500px) {
+          .simon .central-bar .reset-container span {
+            font-size: 1.0rem; } }
+      .simon .central-bar .reset-container .reset-button {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: white; }
+        .simon .central-bar .reset-container .reset-button:hover, .simon .central-bar .reset-container .reset-button:focus {
+          cursor: pointer; }
+        .simon .central-bar .reset-container .reset-button:focus {
+          outline: none; }
 
 /*# sourceMappingURL=style.css.map */

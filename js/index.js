@@ -13,6 +13,7 @@ const setup = {
 		const blue = document.getElementById('blue');
 		const startBtn = document.getElementById('start-game');
 		const strictBtn = document.getElementById('strict-mode');
+		const resetBtn = document.getElementsByClassName('reset-button')[0];
 
 		green.addEventListener('click', () => {
 			simon.checkInput(1);
@@ -32,6 +33,7 @@ const setup = {
 		});
 		startBtn.addEventListener('click', () => simon.go());
 		strictBtn.addEventListener('click', () => ui.toggleStrict());
+		resetBtn.addEventListener('click', () => simon.reset());
 	},
 	
 	// Setup the Simon object, allowing for custom setup if required

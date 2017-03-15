@@ -507,9 +507,11 @@ header {
       header h5 a:hover, header h5 a:focus {
         color: #333333; }
   header .btn {
+    display: none;
     margin-bottom: 5px; }
     @media screen and (min-width: 500px) {
       header .btn {
+        display: inline-block;
         margin-bottom: 0; } }
 
 body > .flex-container {

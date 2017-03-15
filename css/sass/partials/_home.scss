@@ -46,9 +46,11 @@ header {
     }
 
     .btn {
+        display: none;
         margin-bottom: 5px;
 
         @media screen and (min-width: 500px) {
+            display: inline-block;
             margin-bottom: 0;
         }
     }

@@ -750,7 +750,8 @@ body > .flex-container {
         background: #fffb2c;
         width: 25px;
         height: 25px;
-        margin-top: 1px; }
+        margin-top: 1px;
+        padding: 0; }
         @media screen and (min-width: 500px) {
           .simon .central-bar .controls .start-btn-container .start-game {
             width: 30px;
@@ -803,7 +804,8 @@ body > .flex-container {
         width: 20px;
         height: 20px;
         border-radius: 50%;
-        background: white; }
+        background: white;
+        padding: 0; }
         .simon .central-bar .reset-container .reset-button:hover, .simon .central-bar .reset-container .reset-button:focus {
           cursor: pointer; }
         .simon .central-bar .reset-container .reset-button:focus {

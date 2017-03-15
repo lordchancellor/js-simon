@@ -52,15 +52,13 @@
 			height: 300px;
 		}
 
-		@media screen and (min-width: 768px) {
-			&:hover,
-			&:focus {
-				cursor: pointer;
-			}
+		&:hover,
+		&:focus {
+			cursor: pointer;
+		}
 
-			&:focus {
-				outline: none;
-			}
+		&:focus {
+			outline: none;
 		}
 
 		&[disabled] {
@@ -77,9 +75,12 @@
 			border-width: 10px 5px 5px 10px;
 		}
 
+		&.highlight {
+			background: $simonGShade;
+		}
+
 		@media screen and (min-width: 768px) {
-			&:hover,
-			&.highlight {
+			&:hover {
 				background: $simonGShade;
 			}
 
@@ -102,9 +103,12 @@
 			border-width: 10px 10px 5px 5px;
 		}
 
+		&.highlight {
+			background: $simonRShade;
+		}
+
 		@media screen and (min-width: 768px) {
-			&:hover,
-			&.highlight {
+			&:hover {
 				background: $simonRShade;
 			}
 
@@ -127,9 +131,12 @@
 			border-width: 5px 5px 10px 10px;
 		}
 
+		&.highlight {
+			background: $simonYShade;
+		}
+
 		@media screen and (min-width: 768px) {
-			&:hover,
-			&.highlight {
+			&:hover {
 				background: $simonYShade;
 			}
 
@@ -152,9 +159,12 @@
 			border-width: 5px 10px 10px 5px;
 		}
 
+		&.highlight {
+			background: $simonBShade;
+		}
+
 		@media screen and (min-width: 768px) {
-			&:hover,
-			&.highlight {
+			&:hover {
 				background: $simonBShade;
 			}
 

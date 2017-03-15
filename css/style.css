@@ -595,19 +595,20 @@ body > .flex-container {
       .simon .simon-blue {
         width: 300px;
         height: 300px; } }
-    .simon .simon-green:hover, .simon .simon-green:focus,
-    .simon .simon-red:hover,
-    .simon .simon-red:focus,
-    .simon .simon-yellow:hover,
-    .simon .simon-yellow:focus,
-    .simon .simon-blue:hover,
-    .simon .simon-blue:focus {
-      cursor: pointer; }
-    .simon .simon-green:focus,
-    .simon .simon-red:focus,
-    .simon .simon-yellow:focus,
-    .simon .simon-blue:focus {
-      outline: none; }
+    @media screen and (min-width: 768px) {
+      .simon .simon-green:hover, .simon .simon-green:focus,
+      .simon .simon-red:hover,
+      .simon .simon-red:focus,
+      .simon .simon-yellow:hover,
+      .simon .simon-yellow:focus,
+      .simon .simon-blue:hover,
+      .simon .simon-blue:focus {
+        cursor: pointer; }
+      .simon .simon-green:focus,
+      .simon .simon-red:focus,
+      .simon .simon-yellow:focus,
+      .simon .simon-blue:focus {
+        outline: none; } }
     .simon .simon-green[disabled],
     .simon .simon-red[disabled],
     .simon .simon-yellow[disabled],
@@ -620,10 +621,11 @@ body > .flex-container {
     @media screen and (min-width: 500px) {
       .simon .simon-green {
         border-width: 10px 5px 5px 10px; } }
-    .simon .simon-green:hover, .simon .simon-green.highlight {
-      background: #88e592; }
-    .simon .simon-green:not(.highlight)[disabled]:hover {
-      background: #49d759; }
+    @media screen and (min-width: 768px) {
+      .simon .simon-green:hover, .simon .simon-green.highlight {
+        background: #88e592; }
+      .simon .simon-green:not(.highlight)[disabled]:hover {
+        background: #49d759; } }
   .simon .simon-red {
     background: #f6321a;
     border-top-right-radius: 100%;
@@ -631,10 +633,11 @@ body > .flex-container {
     @media screen and (min-width: 500px) {
       .simon .simon-red {
         border-width: 10px 10px 5px 5px; } }
-    .simon .simon-red:hover, .simon .simon-red.highlight {
-      background: #f97464; }
-    .simon .simon-red:not(.highlight)[disabled]:hover {
-      background: #f6321a; }
+    @media screen and (min-width: 768px) {
+      .simon .simon-red:hover, .simon .simon-red.highlight {
+        background: #f97464; }
+      .simon .simon-red:not(.highlight)[disabled]:hover {
+        background: #f6321a; } }
   .simon .simon-yellow {
     background: #fff732;
     border-bottom-left-radius: 100%;
@@ -642,10 +645,11 @@ body > .flex-container {
     @media screen and (min-width: 500px) {
       .simon .simon-yellow {
         border-width: 5px 5px 10px 10px; } }
-    .simon .simon-yellow:hover, .simon .simon-yellow.highlight {
-      background: #fffa7f; }
-    .simon .simon-yellow:not(.highlight)[disabled]:hover {
-      background: #fff732; }
+    @media screen and (min-width: 768px) {
+      .simon .simon-yellow:hover, .simon .simon-yellow.highlight {
+        background: #fffa7f; }
+      .simon .simon-yellow:not(.highlight)[disabled]:hover {
+        background: #fff732; } }
   .simon .simon-blue {
     background: #019be9;
     border-bottom-right-radius: 100%;
@@ -653,10 +657,11 @@ body > .flex-container {
     @media screen and (min-width: 500px) {
       .simon .simon-blue {
         border-width: 5px 10px 10px 5px; } }
-    .simon .simon-blue:hover, .simon .simon-blue.highlight {
-      background: #38bcfe; }
-    .simon .simon-blue:not(.highlight)[disabled]:hover {
-      background: #019be9; }
+    @media screen and (min-width: 768px) {
+      .simon .simon-blue:hover, .simon .simon-blue.highlight {
+        background: #38bcfe; }
+      .simon .simon-blue:not(.highlight)[disabled]:hover {
+        background: #019be9; } }
   .simon .central-bar {
     width: 100px;
     position: absolute;
